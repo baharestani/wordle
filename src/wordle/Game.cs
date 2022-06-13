@@ -1,8 +1,8 @@
 using System;
 
-namespace wordle.tests
+namespace Wordle
 {
-    internal class Game
+    public class Game
     {
         private string word;
 
@@ -11,7 +11,7 @@ namespace wordle.tests
             this.word = word;
         }
 
-        internal void Check(string guess)
+        public void Check(string guess)
         {
             if (guess.Length != word.Length)
             {

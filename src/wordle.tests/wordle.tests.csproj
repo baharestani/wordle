@@ -22,4 +22,8 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Wordle\Wordle.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -1,6 +1,7 @@
 using Xunit;
 using FluentAssertions;
 using System;
+using Wordle;
 
 namespace wordle.tests
 {
