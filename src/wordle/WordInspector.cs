@@ -2,19 +2,19 @@ namespace Wordle
 {
     public class WordInspector
     {
-        public WordInspectionResults Inspect(string word, char letter, byte index)
+        public InspectionResults Inspect(string word, char letter, byte index)
         {
             if (word[index] == letter)
             {
-                return WordInspectionResults.Fits;
+                return InspectionResults.Exact;
             }
 
             if (word.Contains(letter))
             {
-                return WordInspectionResults.Present;
+                return InspectionResults.Present;
             }
 
-            return WordInspectionResults.Absent;
+            return InspectionResults.Absent;
         }
     }
 }

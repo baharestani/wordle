@@ -1,9 +1,9 @@
 namespace Wordle
 {
-    public enum WordInspectionResults
+    public enum InspectionResults
     {
         Absent,
-        Fits,
+        Exact,
         Present
     }
 }
