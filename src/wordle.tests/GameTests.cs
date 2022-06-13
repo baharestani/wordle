@@ -16,5 +16,7 @@ namespace wordle.tests
             var act = () => game.Check(guess);
             act.Should().Throw<Exception>();
         }
+
+
     }
 }
