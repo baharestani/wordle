@@ -3,6 +3,7 @@ using FluentAssertions;
 using System;
 using Wordle;
 using System.Linq;
+using Moq;
 
 namespace wordle.tests
 {
@@ -13,8 +14,12 @@ namespace wordle.tests
         [InlineData("word", "words")]
         public void CheckThrowsErrorWhenLengthMismatches(string word, string guess)
         {
-            var game = new Game(word);
+            var wordProvider = new Mock<IWordProvider>();
+            wordProvider.Setup(p => p.GetWord()).Returns(word);
+            var game = new Game(wordProvider.Object);
+
             var act = () => game.Check(guess);
+
             act.Should().Throw<Exception>();
         }
 
@@ -22,8 +27,12 @@ namespace wordle.tests
         public void CheckReturnsValidResult()
         {
             const string Guess = "road";
-            var game = new Game("word");
-            var result = game.Check(Guess).ToArray();
+            var wordProvider = new Mock<IWordProvider>();
+            wordProvider.Setup(p => p.GetWord()).Returns("word");
+            var game = new Game(wordProvider.Object);
+
+            var result = game.Check(Guess);
+
             result[Guess.IndexOf("r")].Should().Be(InspectionResults.Present);
             result[Guess.IndexOf("o")].Should().Be(InspectionResults.Exact);
             result[Guess.IndexOf("a")].Should().Be(InspectionResults.Absent);
