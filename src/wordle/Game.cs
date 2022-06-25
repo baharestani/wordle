@@ -13,11 +13,13 @@ namespace Wordle
             this.word = wordProvider.GetWord();
         }
 
+        public string Word => word;
+
         public InspectionResults[] Check(string guess)
         {
             if (guess.Length != word.Length)
             {
-                throw new Exception();
+                throw new InvalidDataException("Length mismatch");
             }
 
             var results = new InspectionResults[guess.Length];
