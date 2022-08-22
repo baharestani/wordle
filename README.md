@@ -1,5 +1,6 @@
 # Wordle
 
+
 ## Run
 
 Run the following and wait to see the `READY!` prompt
@@ -7,6 +8,7 @@ Run the following and wait to see the `READY!` prompt
 ```bash
 dotnet run --project src/Wordle.Console/Wordle.Console.csproj
 ```
+![screenshot](images/shot.png)
 
 ## Architecture
 
