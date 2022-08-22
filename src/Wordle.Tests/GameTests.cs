@@ -1,11 +1,10 @@
 using Xunit;
 using FluentAssertions;
 using System;
-using Wordle;
 using System.Linq;
 using Moq;
 
-namespace wordle.tests
+namespace Wordle.Tests
 {
     public class GameTests
     {
